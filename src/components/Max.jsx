@@ -1,3 +1,4 @@
+import Noise from "./Noise";
 import InfiniteScroll from "./InfiniteScroll";
 
 function Max({ theme }) {
@@ -26,10 +27,9 @@ function Max({ theme }) {
           : "bg-neutral text-neutral-content flex-1"
       }
     >
-        <InfiniteScroll
-          items={items}
-        />
-      </div>
+      <Noise />
+      <InfiniteScroll items={items} />
+    </div>
   );
 }
 

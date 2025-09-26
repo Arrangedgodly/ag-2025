@@ -9,11 +9,11 @@ function App() {
   const [currentPage, setCurrentPage] = useState("max");
   const [theme, setTheme] = useState(0);
   return (
-    <div className="flex flex-col min-h-screen max-h-screen">
+    <div className="flex flex-col min-h-screen max-h-screen justify-center items-center min-w-screen max-w-screen">
       <Navbar theme={theme} setTheme={setTheme} />
-        {currentPage == "home" && <Home theme={theme} />}
-        {currentPage == "max" && <Max theme={theme} />}
-        {currentPage == "settings" && <Settings theme={theme} />}
+      {currentPage == "home" && <Home theme={theme} />}
+      {currentPage == "max" && <Max theme={theme} />}
+      {currentPage == "settings" && <Settings theme={theme} />}
       <Dock
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}

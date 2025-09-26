@@ -5,15 +5,15 @@ import { Observer } from "gsap/Observer";
 gsap.registerPlugin(Observer);
 
 export default function InfiniteScroll({
-  width = "30rem",
+  width = "20rem",
   maxHeight = "85vh",
-  negativeMargin = "-0.2em",
+  negativeMargin = "-2em",
   items = [],
-  itemMinHeight = 150,
+  itemMinHeight = 300,
   isTilted = true,
   tiltDirection = "left",
   autoplay = true,
-  autoplaySpeed = 0.5,
+  autoplaySpeed = 1.5,
   autoplayDirection = "down",
   pauseOnHover = false,
 }) {

@@ -3,8 +3,8 @@ function Navbar({ theme, setTheme }) {
     <div
       className={
         theme == 0
-          ? "navbar bg-stone-100 text-slate-900"
-          : "navbar bg-neutral text-neutral-content"
+          ? "navbar bg-stone-100 text-stone-900"
+          : "navbar bg-stone-900 text-stone-100"
       }
     >
       <label className="swap swap-rotate">

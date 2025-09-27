@@ -1,8 +1,7 @@
-import Noise from "./Noise";
 import InfiniteScroll from "./InfiniteScroll";
 import MaxCard from "./MaxCard";
 
-function Max({ theme }) {
+function Max() {
   const devices = [
     {
       imageSrc: "https://i.imgur.com/bS9nPld.png",
@@ -51,16 +50,9 @@ function Max({ theme }) {
   }));
 
   return (
-    <div
-      className={
-        theme == 0
-          ? "bg-stone-100 text-stone-900 flex-1 flex-col min-w-screen"
-          : "bg-stone-900 text-stone-100 flex-1 flex-col min-w-screen"
-      }
-    >
-      <Noise />
+    <>
       <InfiniteScroll items={items} />
-    </div>
+    </>
   );
 }
 

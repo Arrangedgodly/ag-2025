@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { gsap } from "gsap";
+import { CardContext } from "./CardContext";
 
 export default function BounceCards({
   className = "",
@@ -18,6 +19,8 @@ export default function BounceCards({
   ],
   enableHover = false,
 }) {
+  const { setActiveCard } = useContext(CardContext);
+
   useEffect(() => {
     gsap.fromTo(
       ".card",
@@ -59,6 +62,8 @@ export default function BounceCards({
   const pushSiblings = (hoveredIdx) => {
     if (!enableHover) return;
 
+    setActiveCard(hoveredIdx);
+
     images.forEach((_, i) => {
       const selector = `.card-${i}`;
       gsap.killTweensOf(selector);
@@ -93,6 +98,8 @@ export default function BounceCards({
 
   const resetSiblings = () => {
     if (!enableHover) return;
+
+    setActiveCard(-1);
 
     images.forEach((_, i) => {
       const selector = `.card-${i}`;

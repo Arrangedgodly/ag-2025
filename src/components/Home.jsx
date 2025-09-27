@@ -1,38 +1,68 @@
+import { useContext } from "react";
 import Noise from "./Noise";
 import CircularText from "./CircularText";
 import BounceCards from "./BounceCards";
+import CardDescription from "./CardDescription";
+import { CardContext } from "./CardContext";
 
-function Home({ theme }) {
+function Home() {
+  const { activeCard } = useContext(CardContext);
+
   const images = [
-    "https://f4.bcbits.com/img/a1726130597_10.jpg",
-    "https://f4.bcbits.com/img/a1655674144_10.jpg",
-    "https://f4.bcbits.com/img/a3062194197_10.jpg",
-    "https://f4.bcbits.com/img/a3758805720_10.jpg",
     "https://f4.bcbits.com/img/a0400007769_10.jpg",
+    "https://f4.bcbits.com/img/a3758805720_10.jpg",
+    "https://f4.bcbits.com/img/a3062194197_10.jpg",
+    "https://f4.bcbits.com/img/a1655674144_10.jpg",
+    "https://f4.bcbits.com/img/a1726130597_10.jpg",
   ];
+
+  const albums = [
+    { title: "Seasonal Aggression: The Mixtape", releaseDate: "Sept 2021" },
+    {
+      title: "Taxed, Tolled & Eternally Trolled",
+      releaseDate: "Sept 2023",
+    },
+    {
+      title: "One Seasoned Cracker",
+      releaseDate: "May 2025",
+    },
+    {
+      title: "Steal this Beat! Vol 1",
+      releaseDate: "Aug 2025",
+    },
+    {
+      title: "One Month to Move",
+      releaseDate: "Oct 2025",
+    },
+  ];
+
   return (
-    <div
-      className={
-        theme == 0
-          ? "bg-stone-100 text-stone-900 flex-1 flex-col max-w-screen"
-          : "bg-stone-900 text-stone-100 flex-1 flex-col max-w-screen"
-      }
-    >
+    <>
+      <div className="m-5"></div>
       <Noise />
       <CircularText
         text="ARRANGEDGODLY * PEUIMPORTE * "
         onHover="goBonkers"
         spinDuration={50}
       />
+      <div className="m-10"></div>
       <BounceCards
         images={images}
         enableHover={true}
-        containerWidth={'100vw'}
+        containerWidth={"100vw"}
         containerHeight={300}
         animationDelay={1}
         animationStagger={0.2}
       />
-    </div>
+      <ul className="timeline flex justify-center items-center">
+        {albums[activeCard] && (
+          <CardDescription
+            title={albums[activeCard].title}
+            releaseDate={albums[activeCard].releaseDate}
+          />
+        )}
+      </ul>
+    </>
   );
 }
 

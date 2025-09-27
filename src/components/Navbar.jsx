@@ -1,10 +1,14 @@
-function Navbar({ theme, setTheme }) {
+import { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+
+function Navbar() {
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <div
       className={
         theme == 0
-          ? "navbar bg-stone-100 text-stone-900"
-          : "navbar bg-stone-900 text-stone-100"
+          ? "bg-transparent text-stone-900 flex justify-start items-start absolute top-4 left-4 z-50"
+          : "bg-transparent text-stone-100 flex justify-start items-start absolute top-4 left-4 z-50"
       }
     >
       <label className="swap swap-rotate">

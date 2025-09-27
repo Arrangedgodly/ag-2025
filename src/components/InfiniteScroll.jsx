@@ -6,7 +6,7 @@ gsap.registerPlugin(Observer);
 
 export default function InfiniteScroll({
   width = "20rem",
-  maxHeight = "85vh",
+  maxHeight = "100vh",
   negativeMargin = "-2em",
   items = [],
   itemMinHeight = 300,

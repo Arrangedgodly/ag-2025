@@ -1,5 +1,3 @@
-import TiltedCard from "./TiltedCard";
-
 const MaxCard = ({
   imageSrc,
   altText,
@@ -8,21 +6,23 @@ const MaxCard = ({
   imageHeight,
   containerHeight,
   containerWidth,
-  overlayContent,
-  link
+  link,
 }) => {
   return (
     <a href={link} target="_blank">
-      <TiltedCard
-        imageSrc={imageSrc}
-        altText={altText}
-        CaptionText={CaptionText}
-        imageWidth={imageWidth}
-        imageHeight={imageHeight}
-        containerHeight={containerHeight}
-        containerWidth={containerWidth}
-        overlayContent={overlayContent}
-      />
+      <div className={`card max-h-${containerHeight} max-w-${containerWidth}`}>
+        <figure>
+          <img
+            src={imageSrc}
+            alt={altText}
+            width={imageWidth}
+            height={imageHeight}
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title font-geo text-4xl text-center">{CaptionText}</h2>
+        </div>
+      </div>
     </a>
   );
 };

@@ -1,4 +1,3 @@
-import Silk from "./Silk";
 import InfiniteScroll from "./InfiniteScroll";
 import MaxCard from "./MaxCard";
 
@@ -65,11 +64,6 @@ function Max() {
 
   return (
     <>
-      <div
-        className={`fixed h-screen w-screen opacity-30 saturate-150 mix-blend-hard-light`}
-      >
-        <Silk speed={5.5} scale={0.9} noiseIntensity={.5} rotation={2.75} />
-      </div>
       <InfiniteScroll items={items} />
     </>
   );

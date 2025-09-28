@@ -1,6 +1,7 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
 import { gsap } from "gsap";
 import { Observer } from "gsap/Observer";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 gsap.registerPlugin(Observer);
 
@@ -19,6 +20,7 @@ export default function InfiniteScroll({
 }) {
   const wrapperRef = useRef(null);
   const containerRef = useRef(null);
+  const { theme } = useContext(ThemeContext);
 
   const getTiltTransform = () => {
     if (!isTilted) return "none";
@@ -137,8 +139,20 @@ export default function InfiniteScroll({
       ref={wrapperRef}
       style={{ maxHeight }}
     >
-      <div className="absolute top-0 left-0 w-full h-1/4 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
+      <div
+        className={
+          theme == 0
+            ? "absolute top-0 left-0 w-full h-1/4 bg-gradient-to-b from-stone-100 to-transparent z-10 pointer-events-none"
+            : "absolute top-0 left-0 w-full h-1/4 bg-gradient-to-b from-stone-900 to-transparent z-10 pointer-events-none"
+        }
+      ></div>
+      <div
+        className={
+          theme == 0
+            ? "absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-stone-100 to-transparent z-10 pointer-events-none"
+            : "absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-stone-900 to-transparent z-10 pointer-events-none"
+        }
+      ></div>
 
       <div
         className="flex flex-col overscroll-contain px-4 cursor-grab origin-center"
@@ -150,7 +164,7 @@ export default function InfiniteScroll({
       >
         {items.map((item, i) => (
           <div
-            className="flex items-center justify-center p-4 text-xl font-semibold text-center border-2 border-white rounded-[15px] select-none box-border relative"
+            className="flex items-center justify-center p-4 text-xl font-semibold text-center border-0 border-transparent rounded-[15px] select-none box-border relative"
             key={i}
             style={{
               height: `${itemMinHeight}px`,

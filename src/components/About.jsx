@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import TextPressure from "./TextPressure";
 import { ThemeContext } from "../contexts/ThemeContext";
+import TextPressure from "./TextPressure";
 
 function About() {
   const { theme } = useContext(ThemeContext);

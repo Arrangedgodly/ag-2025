@@ -9,18 +9,21 @@ const MaxCard = ({
   containerHeight,
   containerWidth,
   overlayContent,
+  link
 }) => {
   return (
-    <TiltedCard
-      imageSrc={imageSrc}
-      altText={altText}
-      CaptionText={CaptionText}
-      imageWidth={imageWidth}
-      imageHeight={imageHeight}
-      containerHeight={containerHeight}
-      containerWidth={containerWidth}
-      overlayContent={overlayContent}
-    />
+    <a href={link} target="_blank">
+      <TiltedCard
+        imageSrc={imageSrc}
+        altText={altText}
+        CaptionText={CaptionText}
+        imageWidth={imageWidth}
+        imageHeight={imageHeight}
+        containerHeight={containerHeight}
+        containerWidth={containerWidth}
+        overlayContent={overlayContent}
+      />
+    </a>
   );
 };
 

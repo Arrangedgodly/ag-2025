@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import { gsap } from "gsap";
-import { CardContext } from "./CardContext";
+import { CardContext } from "../contexts/CardContext";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function BounceCards({
   className = "",
@@ -20,6 +21,7 @@ export default function BounceCards({
   enableHover = false,
 }) {
   const { setActiveCard } = useContext(CardContext);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     gsap.fromTo(
@@ -126,7 +128,11 @@ export default function BounceCards({
       {images.map((src, idx) => (
         <div
           key={idx}
-          className={`card card-${idx} absolute w-[15rem] aspect-square border-8 border-white rounded-[30px] overflow-hidden`}
+          className={
+            theme == 0
+              ? `card card-${idx} absolute w-[15rem] aspect-square border-10 border-stone-400 rounded-[30px] overflow-hidden`
+              : `card card-${idx} absolute w-[15rem] aspect-square border-10 border-stone-600 rounded-[30px] overflow-hidden`
+          }
           style={{
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
             transform: transformStyles[idx] || "none",

@@ -3,7 +3,7 @@ import Noise from "./Noise";
 import CircularText from "./CircularText";
 import BounceCards from "./BounceCards";
 import CardDescription from "./CardDescription";
-import { CardContext } from "./CardContext";
+import { CardContext } from "../contexts/CardContext";
 
 function Home() {
   const { activeCard } = useContext(CardContext);
@@ -38,12 +38,12 @@ function Home() {
 
   return (
     <>
-      <div className="m-5"></div>
       <Noise />
       <CircularText
-        text="ARRANGEDGODLY * PEUIMPORTE * "
+        text="ARRANGED GODLY * PEU IMPORTE * "
         onHover="goBonkers"
         spinDuration={50}
+        className="mt-10"
       />
       <div className="m-10"></div>
       <BounceCards

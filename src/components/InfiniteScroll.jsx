@@ -7,13 +7,13 @@ gsap.registerPlugin(Observer);
 export default function InfiniteScroll({
   width = "20rem",
   maxHeight = "100vh",
-  negativeMargin = "-2em",
+  negativeMargin = "-.5em",
   items = [],
   itemMinHeight = 300,
   isTilted = true,
   tiltDirection = "left",
   autoplay = true,
-  autoplaySpeed = 1.5,
+  autoplaySpeed = 2.5,
   autoplayDirection = "down",
   pauseOnHover = false,
 }) {

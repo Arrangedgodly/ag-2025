@@ -1,41 +1,43 @@
 import { useState } from "react";
-import { ThemeContext } from "./components/ThemeContext";
-import { CardContext } from "./components/CardContext";
+import { ThemeContext } from "./contexts/ThemeContext";
+import { CardContext } from "./contexts/CardContext";
+import { Routes, Route } from "react-router";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Max from "./components/Max";
 import About from "./components/About";
-import Dock from "./components/Dock";
+import BottomDock from "./components/BottomDock";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("max");
   const [theme, setTheme] = useState(0);
-  const [activeCard, setActiveCard] = useState(0);
+  const [activeCard, setActiveCard] = useState(-1);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className="flex flex-col min-h-screen max-h-screen justify-center items-center min-w-screen max-w-screen">
+      <div className="flex flex-col min-h-screen max-h-screen min-w-screen max-w-screen justify-center items-center m-0 p-0">
         <Navbar />
         <div
           className={
             theme == 0
-              ? "bg-stone-100 text-stone-900 flex-1 flex-col max-w-screen min-w-screen justify-center items-center"
-              : "bg-stone-900 text-stone-100 flex-1 flex-col max-w-screen min-w-screen justify-center items-center"
+              ? "bg-stone-100 text-stone-900 flex-1 flex-col max-w-screen min-w-screen justify-center items-center relative min-h-screen max-h-screen"
+              : "bg-stone-900 text-stone-100 flex-1 flex-col max-w-screen min-w-screen justify-center items-center relative min-h-screen max-h-screen"
           }
         >
-          {currentPage == "home" && (
-            <CardContext.Provider value={{ activeCard, setActiveCard }}>
-              <Home />
-            </CardContext.Provider>
-          )}
-          {currentPage == "max" && <Max />}
-          {currentPage == "about" && <About />}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <CardContext.Provider value={{ activeCard, setActiveCard }}>
+                  <Home />
+                </CardContext.Provider>
+              }
+            />
+            <Route path="/max" element={<Max />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
         </div>
-        <Dock
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          theme={theme}
-        />
+
+        <BottomDock />
       </div>
     </ThemeContext.Provider>
   );

@@ -134,7 +134,7 @@ export default function BounceCards({
               : `card card-${idx} absolute w-[15rem] aspect-square border-10 border-stone-600 rounded-[30px] overflow-hidden`
           }
           style={{
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+            boxShadow: "0 10px 20px rgba(0, 0, 0, 0.4)",
             transform: transformStyles[idx] || "none",
           }}
           onMouseEnter={() => pushSiblings(idx)}

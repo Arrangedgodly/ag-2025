@@ -5,7 +5,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function BounceCards({
   className = "",
-  images = [],
+  albums = [],
   containerWidth = 400,
   containerHeight = 400,
   animationDelay = 0.5,
@@ -66,7 +66,7 @@ export default function BounceCards({
 
     setActiveCard(hoveredIdx);
 
-    images.forEach((_, i) => {
+    albums.forEach((_, i) => {
       const selector = `.card-${i}`;
       gsap.killTweensOf(selector);
 
@@ -103,7 +103,7 @@ export default function BounceCards({
 
     setActiveCard(-1);
 
-    images.forEach((_, i) => {
+    albums.forEach((_, i) => {
       const selector = `.card-${i}`;
       gsap.killTweensOf(selector);
 
@@ -119,15 +119,16 @@ export default function BounceCards({
 
   return (
     <div
-      className={`relative flex items-center justify-center ${className}`}
+      className={`flex items-center justify-center ${className}`}
       style={{
         width: containerWidth,
         height: containerHeight,
       }}
     >
-      {images.map((src, idx) => (
-        <div
+      {albums.map((album, idx) => (
+        <a
           key={idx}
+          href={`/albums/${album.url}`}
           className={
             theme == 0
               ? `card card-${idx} absolute w-[15rem] aspect-square border-10 border-stone-400 rounded-[30px] overflow-hidden`
@@ -142,10 +143,10 @@ export default function BounceCards({
         >
           <img
             className="w-full h-full object-cover"
-            src={src}
+            src={album.image}
             alt={`card-${idx}`}
           />
-        </div>
+        </a>
       ))}
     </div>
   );

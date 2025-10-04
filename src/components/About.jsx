@@ -5,7 +5,7 @@ import TextPressure from "./TextPressure";
 function About() {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 w-screen">
       <p
         className={
           theme == 0

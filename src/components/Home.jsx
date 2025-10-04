@@ -4,37 +4,10 @@ import CircularText from "./CircularText";
 import BounceCards from "./BounceCards";
 import CardDescription from "./CardDescription";
 import { CardContext } from "../contexts/CardContext";
+import { albums } from "../constants/albums";
 
 function Home() {
   const { activeCard } = useContext(CardContext);
-
-  const images = [
-    "https://f4.bcbits.com/img/a0400007769_10.jpg",
-    "https://f4.bcbits.com/img/a3758805720_10.jpg",
-    "https://f4.bcbits.com/img/a3062194197_10.jpg",
-    "https://f4.bcbits.com/img/a1655674144_10.jpg",
-    "https://f4.bcbits.com/img/a1726130597_10.jpg",
-  ];
-
-  const albums = [
-    { title: "Seasonal Aggression: The Mixtape", releaseDate: "Sept 2021" },
-    {
-      title: "Taxed, Tolled & Eternally Trolled",
-      releaseDate: "Sept 2023",
-    },
-    {
-      title: "One Seasoned Cracker",
-      releaseDate: "May 2025",
-    },
-    {
-      title: "Steal this Beat! Vol 1",
-      releaseDate: "Aug 2025",
-    },
-    {
-      title: "One Month to Move",
-      releaseDate: "Oct 2025",
-    },
-  ];
 
   return (
     <>
@@ -43,11 +16,10 @@ function Home() {
         text="ARRANGED GODLY * PEU IMPORTE * "
         onHover="goBonkers"
         spinDuration={50}
-        className="mt-10"
+        className="my-10"
       />
-      <div className="m-10"></div>
       <BounceCards
-        images={images}
+        albums={albums}
         enableHover={true}
         containerWidth={"100vw"}
         containerHeight={300}

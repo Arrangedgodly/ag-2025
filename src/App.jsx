@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import Max from "./components/Max";
 import About from "./components/About";
 import BottomDock from "./components/BottomDock";
+import AlbumPage from "./components/AlbumPage";
+import { albums } from './constants/albums';
 
 function App() {
   const [theme, setTheme] = useState(0);
@@ -19,8 +21,8 @@ function App() {
         <div
           className={
             theme == 0
-              ? "bg-stone-100 text-stone-700 flex-1 flex-col max-w-screen min-w-screen justify-center items-center relative min-h-screen max-h-screen"
-              : "bg-stone-900 text-stone-300 flex-1 flex-col max-w-screen min-w-screen justify-center items-center relative min-h-screen max-h-screen"
+              ? "bg-stone-100 text-stone-700 flex flex-1 flex-col max-w-screen min-w-screen items-center relative min-h-screen max-h-screen"
+              : "bg-stone-900 text-stone-300 flex flex-1 flex-col max-w-screen min-w-screen items-center relative min-h-screen max-h-screen"
           }
         >
           <Routes>
@@ -34,6 +36,7 @@ function App() {
             />
             <Route path="/max" element={<Max />} />
             <Route path="/about" element={<About />} />
+            <Route path="/albums/:url" element={<AlbumPage data={albums} />} />
           </Routes>
         </div>
         <BottomDock />

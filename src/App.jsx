@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { CardContext } from "./contexts/CardContext";
 import { Routes, Route } from "react-router";
@@ -8,11 +8,17 @@ import Max from "./components/Max";
 import About from "./components/About";
 import BottomDock from "./components/BottomDock";
 import AlbumPage from "./components/AlbumPage";
-import { albums } from './constants/albums';
+import { albums } from "./constants/albums";
 
 function App() {
-  const [theme, setTheme] = useState(0);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("userTheme") ? localStorage.getItem("userTheme") : 0
+  );
   const [activeCard, setActiveCard] = useState(-1);
+
+  useEffect(() => {
+    localStorage.setItem("userTheme", theme);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

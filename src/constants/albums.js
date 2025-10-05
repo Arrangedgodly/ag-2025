@@ -27,10 +27,13 @@ export const albums = [
         shine throughout.`,
     url: "TTNET",
     amazon: "https://music.amazon.com/albums/B0DZK48BPJ",
-    apple: "https://music.apple.com/us/album/taxed-tolled-eternally-trolled/1800523240",
-    bandcamp: "https://arrangedgodly.bandcamp.com/album/taxed-tolled-eternally-trolled",
+    apple:
+      "https://music.apple.com/us/album/taxed-tolled-eternally-trolled/1800523240",
+    bandcamp:
+      "https://arrangedgodly.bandcamp.com/album/taxed-tolled-eternally-trolled",
     tidal: "https://tidal.com/album/422302597",
-    youtube: "https://music.youtube.com/playlist?list=OLAK5uy_kNj9KIgLlrxo1gVyaXxgsbmoqkNtV3q58&si=ULN-z112qhyVQ5s5"
+    youtube:
+      "https://music.youtube.com/playlist?list=OLAK5uy_kNj9KIgLlrxo1gVyaXxgsbmoqkNtV3q58&si=ULN-z112qhyVQ5s5",
   },
   {
     title: "One Seasoned Cracker",
@@ -44,7 +47,8 @@ export const albums = [
     apple: "https://music.apple.com/us/album/one-seasoned-cracker/1816579233",
     bandcamp: "https://arrangedgodly.bandcamp.com/album/one-seasoned-cracker",
     tidal: "https://tidal.com/album/437754217",
-    youtube: "https://music.youtube.com/playlist?list=OLAK5uy_mq2KSJ7ven7HabtqKygXAemZYTP4gAu4Q&si=pet1UEjjrcX4_eXd"
+    youtube:
+      "https://music.youtube.com/playlist?list=OLAK5uy_mq2KSJ7ven7HabtqKygXAemZYTP4gAu4Q&si=pet1UEjjrcX4_eXd",
   },
   {
     title: "Steal this Beat! Vol 1",
@@ -59,7 +63,8 @@ export const albums = [
     apple: "https://music.apple.com/us/album/steal-this-beat-vol-1/1830601946",
     bandcamp: "https://peuimporte.bandcamp.com/album/steal-this-beat-vol-1",
     tidal: "https://tidal.com/album/448688349",
-    youtube: "https://music.youtube.com/playlist?list=OLAK5uy_kkEB8i7mzHgVepiydP04uDbb9kAfKqMu0"
+    youtube:
+      "https://music.youtube.com/playlist?list=OLAK5uy_kkEB8i7mzHgVepiydP04uDbb9kAfKqMu0",
   },
   {
     title: "One Month to Move",
@@ -73,6 +78,21 @@ export const albums = [
     apple: "",
     bandcamp: "",
     tidal: "",
-    youtube: ""
+    youtube: "",
   },
 ];
+
+/* template:
+{
+  title: "",
+  releaseDate: "",
+  image: "",
+  description: "",
+  url: "",
+  amazon: "";
+  apple: "",
+  bandcamp: "",
+  tidal: "",
+  youtube: ""
+}
+*/

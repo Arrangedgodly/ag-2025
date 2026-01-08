@@ -8,6 +8,8 @@ import Max from "./components/Max";
 import About from "./components/About";
 import BottomDock from "./components/BottomDock";
 import AlbumPage from "./components/AlbumPage";
+import Games from "./components/Games";
+import MagicGunden from "./components/MagicGunden";
 import { albums } from "./constants/albums";
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
             <Route path="/max" element={<Max />} />
             <Route path="/about" element={<About />} />
             <Route path="/albums/:url" element={<AlbumPage data={albums} />} />
+            <Route path="/games" element={<Games />} />
+            <Route path="/magic-gunden" element={<MagicGunden />} />
           </Routes>
         </div>
         <BottomDock />

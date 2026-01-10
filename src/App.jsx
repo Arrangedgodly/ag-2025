@@ -24,13 +24,13 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className="flex flex-col min-h-screen max-h-screen min-w-screen max-w-screen justify-center items-center m-0 p-0">
+      <div className="flex flex-col min-h-[100dvh] max-h-[100dvh] min-w-screen max-w-screen justify-center items-center m-0 p-0">
         <Navbar />
         <div
           className={
             theme == 0
-              ? "bg-stone-100 text-stone-700 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-screen max-h-screen"
-              : "bg-stone-900 text-stone-300 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-screen max-h-screen"
+              ? "bg-stone-100 text-stone-700 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-[100dvh] max-h-[100dvh]"
+              : "bg-stone-900 text-stone-300 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-[100dvh] max-h-[100dvh]"
           }
         >
           <Routes>

@@ -39,8 +39,8 @@ function About() {
         text="Grady"
         className={
           theme == 0
-            ? "text-stone-900 h-100"
-            : "text-stone-200 h-100"
+            ? "text-stone-900 h-45 sm:h-100"
+            : "text-stone-200 h-45 sm:h-100"
         }
         flex={false}
         scale={true}

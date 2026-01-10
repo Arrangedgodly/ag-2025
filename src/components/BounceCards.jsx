@@ -62,7 +62,7 @@ export default function BounceCards({
   };
 
   const pushSiblings = (hoveredIdx) => {
-    if (!enableHover) return;
+    if (!enableHover || window.innerWidth < 640) return;
 
     setActiveCard(hoveredIdx);
 
@@ -99,7 +99,7 @@ export default function BounceCards({
   };
 
   const resetSiblings = () => {
-    if (!enableHover) return;
+    if (!enableHover || window.innerWidth < 640) return;
 
     setActiveCard(-1);
 
@@ -119,7 +119,7 @@ export default function BounceCards({
 
   return (
     <div
-      className={`flex items-center justify-center ${className}`}
+      className={`flex flex-wrap gap-4 sm:flex-row items-center justify-center ${className}`}
       style={{
         width: containerWidth,
         height: containerHeight,
@@ -131,8 +131,8 @@ export default function BounceCards({
           href={`/albums/${album.url}`}
           className={
             theme == 0
-              ? `card card-${idx} absolute w-[15rem] aspect-square border-10 border-stone-400 rounded-[30px] overflow-hidden`
-              : `card card-${idx} absolute w-[15rem] aspect-square border-10 border-stone-600 rounded-[30px] overflow-hidden`
+              ? `card card-${idx} sm:absolute w-[9rem] sm:w-[15rem] aspect-square border-10 border-stone-400 rounded-[30px] overflow-hidden max-sm:!transform-none`
+              : `card card-${idx} sm:absolute w-[9rem] sm:w-[15rem] aspect-square border-10 border-stone-600 rounded-[30px] overflow-hidden max-sm:!transform-none`
           }
           style={{
             boxShadow: "0 10px 20px rgba(0, 0, 0, 0.4)",

@@ -89,8 +89,8 @@ const CircularText = ({
     <motion.div
       className={
         theme == 0
-          ? `m-0 mx-auto rounded-full w-[220px] h-[220px] relative text-stone-100 font-black text-center cursor-pointer origin-center bg-stone-700 ${className}`
-          : `m-0 mx-auto rounded-full w-[220px] h-[220px] relative text-stone-500 font-black text-center cursor-pointer origin-center bg-stone-700 ${className}`
+          ? `m-0 mx-auto rounded-full w-[220px] h-[220px] absolute top-0 text-stone-100 font-black text-center cursor-pointer origin-center bg-stone-700 ${className}`
+          : `m-0 mx-auto rounded-full w-[220px] h-[220px] absolute top-0 text-stone-500 font-black text-center cursor-pointer origin-center bg-stone-700 ${className}`
       }
       style={{ rotate: rotation }}
       initial={{ rotate: 0 }}

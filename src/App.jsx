@@ -29,8 +29,8 @@ function App() {
         <div
           className={
             theme == 0
-              ? "bg-stone-100 text-stone-700 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-[100dvh] max-h-[100dvh]"
-              : "bg-stone-900 text-stone-300 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-[100dvh] max-h-[100dvh]"
+              ? "bg-stone-100 text-stone-700 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-screen max-h-screen"
+              : "bg-stone-900 text-stone-300 flex flex-1 flex-col max-w-screen min-w-screen items-center justify-center relative min-h-screen max-h-screen"
           }
         >
           <Routes>
